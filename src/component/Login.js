@@ -1,24 +1,35 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import reactLogo from './assets/9296454.gif';
+import reactLogo from '../assets/9296454.gif';
+import { loginUser } from '../redux/userSlice';
 
 function LogIn() {
-  const nameRef = useRef(null);
-  const passwordRef = useRef(null);
+  // state
+  const [username, setUserName] = useState(undefined);
+  const [password, setPassword] = useState(undefined);
 
+  // redux
+  const { loading, error } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+
+  const handleLoginEvent = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('name', nameRef.current.value);
-    formData.append('password', passwordRef.current.value);
+    formData.append('name', username);
+    formData.append('password', password);
 
-    axios.post('http://localhost:3000/token', formData)
-      .then((res) => window.localStorage.setItem('jwt', res.data.jwt))
-      .then(() => navigate('/welcome'));
+    dispatch(loginUser(formData)).then((result) => {
+      if (result.payload) {
+        setUserName('');
+        setPassword('');
+        navigate('/welcome');
+      }
+    });
   };
   return (
     <div className="home_container">
@@ -26,14 +37,15 @@ function LogIn() {
       <div className="home_inner_container">
         <h2>Drive Your Way to Freedom, Rent a Car Today</h2>
         <div className="login_page_form_container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLoginEvent}>
             <input
               type="username"
               name="username"
               id="username"
               placeholder="Username"
               autoComplete="on"
-              ref={nameRef}
+              value={username || ''}
+              onChange={(e) => setUserName(e.target.value)}
               required
             />
             <br />
@@ -43,11 +55,17 @@ function LogIn() {
               id="password"
               placeholder="Password"
               autoComplete="off"
-              ref={passwordRef}
+              value={password || ''}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <br />
-            <Button type="submit" className="login_btn login_page_btn" variant="success">Log In</Button>
+            <Button type="submit" className="login_btn login_page_btn" variant="success">
+              {loading ? 'Loading...' : 'Log In'}
+            </Button>
+            {error && (
+              <div className="alert alert-danger" role="alert">{error}</div>
+            )}
           </form>
         </div>
       </div>

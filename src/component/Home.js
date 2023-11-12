@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import reactLogo from './assets/9296454.gif';
+import reactLogo from '../assets/9296454.gif';
 
 function Home() {
   const navigate = useNavigate();

@@ -1,26 +1,26 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
-class Welcome extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   // this.state = { username: undefined };
-  // }
+function Welcome() {
+  const token = localStorage.getItem('user');
+  const result = jwtDecode(token);
+  const navigate = useNavigate();
 
-  componentDidMount() {
-    const token = window.localStorage.getItem('jwt');
-    const result = jwtDecode(token);
-    return result;
-  }
-
-  render() {
-    return (
-      <h1>
-        Welcome to the main Page
-      </h1>
-    );
-  }
+  const handleLogOut = () => {
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('user');
+    navigate('/');
+  };
+  return (
+    <>
+      <h2>Welcome to the main </h2>
+      <h2>{result.name}</h2>
+      <h3>{result.email}</h3>
+      <button type="button" onClick={handleLogOut}>Logout</button>
+    </>
+  );
 }
 
 export default Welcome;
