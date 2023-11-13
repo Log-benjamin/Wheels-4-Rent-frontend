@@ -1,0 +1,32 @@
+.container-fluid {
+  margin: 3rem 0 0 0;
+  padding-right: 2rem;
+  width: 34%;
+}
+
+.row {
+  margin-left: 1%;
+}
+
+.container-fluid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container-fluid ul li a {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.container-fluid ul li a:hover {
+  background-color: rgb(102, 171, 0);
+  color: aliceblue;
+}
+
+.active {
+  background-color: rgb(102, 171, 0);
+}

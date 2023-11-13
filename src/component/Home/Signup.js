@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import reactLogo from '../assets/9296454.gif';
+import reactLogo from '../../assets/9296454.gif';
 
 function Register() {
   const nameRef = useRef(null);
@@ -18,7 +18,7 @@ function Register() {
     formData.append('email', emailRef.current.value);
     formData.append('password', passwordRef.current.value);
 
-    axios.post('http://localhost:3000/registration', formData).then(() => navigate('/login'));
+    axios.post('http://localhost:3000/api/v1/registration', formData).then(() => navigate('/login'));
   };
 
   return (

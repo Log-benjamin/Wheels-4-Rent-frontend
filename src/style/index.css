@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@700&display=swap');
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -72,3 +74,61 @@ body {
 }
 
 /* login and register page styling */
+
+/* Main page styling */
+.bg-body-tertiary {
+  padding-left: 3%;
+  padding-right: 5%;
+  margin-bottom: 2rem;
+}
+
+.bg-body-tertiary .container {
+  width: 120%;
+  margin-left: 3%;
+  margin-right: 0;
+  padding: 0;
+}
+
+.logout-btn {
+  margin-left: 2rem;
+}
+
+.company_name {
+  transform: rotate(-10deg);
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+}
+
+.content_container {
+  display: flex;
+}
+
+.main_model_container {
+  width: 100%;
+  margin-right: 7%;
+}
+
+.main_model_container h2 {
+  text-align: center;
+}
+
+.main_model_container p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(178, 178, 178);
+  padding-left: 0.9rem;
+}
+
+.main_model_container div {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.main_model_container div .d-block {
+  opacity: 0.75;
+  height: 350px;
+  background-color: white;
+}
+
+/* Main page styling */
