@@ -1,37 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@700&display=swap');
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .home_container {
   background-color: #fa0;
   height: 100%;
   position: relative;
 }
-
 .home_logo {
   width: 100%;
   height: 100vh;
   opacity: 0.3;
 }
-
 .home_inner_container {
   position: absolute;
   left: 17%;
   top: 0;
   padding-top: 10%;
 }
-
 .home_inner_container h2 {
   color: white;
 }
-
 .login_register_container,
 .login_page_form_container {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
-
 .login_btn,
 .register_btn {
   margin-left: 3rem;
@@ -40,13 +35,11 @@ body {
   border: none;
   background-color: rgb(102, 171, 0);
 }
-
 /* login and register page styling */
 .login_page_form_container {
   flex-direction: column;
   margin-left: 20%;
 }
-
 .login_page_form_container input {
   height: 2.5rem;
   width: 70%;
@@ -55,20 +48,63 @@ body {
   border-radius: 20px;
   margin-bottom: 1rem;
 }
-
 .login_page_btn {
   margin-left: 20%;
   padding: 0.4rem 10%;
 }
-
 .signup_page {
   left: 22%;
 }
-
 .alert-danger {
   width: 70%;
   padding: 1rem 2rem;
   margin-top: 1rem;
 }
-
 /* login and register page styling */
+/* Main page styling */
+.bg-body-tertiary {
+  padding-left: 3%;
+  padding-right: 5%;
+  margin-bottom: 2rem;
+}
+.bg-body-tertiary .container {
+  width: 120%;
+  margin-left: 3%;
+  margin-right: 0;
+  padding: 0;
+}
+.logout-btn {
+  margin-left: 2rem;
+}
+.company_name {
+  transform: rotate(-10deg);
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+}
+.content_container {
+  display: flex;
+}
+.main_model_container {
+  width: 100%;
+  margin-right: 7%;
+}
+.main_model_container h2 {
+  text-align: center;
+}
+.main_model_container p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(178, 178, 178);
+  padding-left: 0.9rem;
+}
+.main_model_container div {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+.main_model_container div .d-block {
+  opacity: 0.75;
+  height: 350px;
+  background-color: white;
+}
+/* Main page styling */
