@@ -9,7 +9,6 @@ export default function NavBar() {
   const result = jwtDecode(token);
   const navigate = useNavigate();
   const handleLogOut = () => {
-    localStorage.removeItem('jwt');
     localStorage.removeItem('user');
     navigate('/');
   };

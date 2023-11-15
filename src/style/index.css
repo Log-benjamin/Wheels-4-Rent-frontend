@@ -101,6 +101,7 @@ body {
 
 .content_container {
   display: flex;
+  margin-bottom: 3rem;
 }
 
 .main_model_container {
@@ -110,6 +111,8 @@ body {
 
 .main_model_container h2 {
   text-align: center;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .main_model_container p {
@@ -120,14 +123,13 @@ body {
 }
 
 .main_model_container div {
-  width: 100%;
   border-radius: 10px;
   height: auto;
 }
 
 .main_model_container div .d-block {
-  opacity: 0.75;
-  height: 350px;
+  opacity: 0.95;
+  height: 400px;
   background-color: white;
 }
 
