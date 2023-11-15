@@ -13,6 +13,11 @@ export const fetchLatesCarModels = createAsyncThunk('car/latestmodels', async ()
   return response.data;
 });
 
+export const addLatestCarModel = createAsyncThunk('post/car', async (params) => {
+  const response = await axios.post('http://localhost:3000/api/v1/cars', params);
+  return response.data;
+});
+
 const carSlice = createSlice({
   name: 'car',
   initialState,
