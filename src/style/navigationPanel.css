@@ -1,15 +1,9 @@
 .container-fluid {
-  margin: 3rem 0 0 0;
-  padding-right: 2rem;
   width: 34%;
 }
 
-.row {
-  margin-left: 1%;
-}
-
 .container-fluid ul {
-  margin: 0;
+  margin-top: 3rem;
   padding: 0;
   list-style: none;
 }
@@ -29,4 +23,10 @@
 
 .active {
   background-color: rgb(102, 171, 0);
+}
+
+.container-fluid .row .col-auto {
+  height: 300px;
+  margin-right: 0;
+  padding-right: 0;
 }
