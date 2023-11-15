@@ -7,7 +7,7 @@ export default function NavigationPanel() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-auto min-vh-100 bg-white">
+        <div className="col-auto bg-white">
           <ul>
             <li>
               <NavLink to="/main" className="nav-link px-2">
