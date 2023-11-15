@@ -1,9 +1,13 @@
 /* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 import '../../style/navigationPanel.css';
 
 export default function NavigationPanel() {
+  const token = localStorage.getItem('user');
+  const result = jwtDecode(token);
+  const currentuser = result.isAdmin;
   return (
     <div className="container-fluid">
       <div className="row">
@@ -25,9 +29,15 @@ export default function NavigationPanel() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/add-a-car" className="nav-link px-2">
-                <span className="ms-1 d-none d-sm-inline">Add a Car</span>
-              </NavLink>
+              {currentuser === true ? (
+                <NavLink to="/add-a-car" className="nav-link px-2">
+                  <span className="ms-1 d-none d-sm-inline">Add a Car</span>
+                </NavLink>
+              ) : (
+                <button type="button" className="normal-user">
+                  <span className="ms-1 d-none d-sm-inline">Add a Car</span>
+                </button>
+              )}
             </li>
             <li>
               <NavLink to="/remove-a-car" className="nav-link px-2">
