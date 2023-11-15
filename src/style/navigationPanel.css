@@ -30,3 +30,9 @@
   margin-right: 0;
   padding-right: 0;
 }
+
+.normal-user {
+  padding: 0.5rem 3.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 0.3px;
+}
