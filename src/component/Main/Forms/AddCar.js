@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import NavBar from '../NavBar';
 import NavigationPanel from '../NavigationPanel';
 import { addLatestCarModel } from '../../../redux/carSlice';
-import '../../../style/addnewcar.css';
+import '../../../style/addremovecar.css';
+import lambergini from '../../../assets/9296454.gif';
 
 export default function AddCar() {
   const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
   const [carParams, setCarParams] = useState({
     car: {
       name: '',
@@ -33,56 +36,77 @@ export default function AddCar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addLatestCarModel(carParams));
+    setShow(true);
   };
-
+  const handleClose = () => setShow(false);
   return (
     <>
       <NavBar />
-      <div className="content_container">
-        <NavigationPanel />
-        <h2>Add a Car Form</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            placeholder="The New Car Name"
-            required
-          />
-          <br />
-          <input
-            type="text"
-            name="model"
-            onChange={handleChange}
-            placeholder="The New Car Model"
-            required
-          />
-          <br />
-          <input
-            type="text"
-            name="description"
-            onChange={handleChange}
-            placeholder="The New Car Description"
-            required
-          />
-          <br />
-          <input
-            type="text"
-            name="image"
-            onChange={handleChange}
-            placeholder="The New Car Photo Url"
-            required
-          />
-          <br />
-          <input
-            type="number"
-            name="price_per_day"
-            onChange={handleChange}
-            placeholder="The New Car Price / Day"
-            required
-          />
-          <Button type="submit" className="login_btn login_page_btn" variant="success">Add</Button>
-        </form>
+      <div className="addform-top-container">
+        <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
+        <div className="addform_inner_container">
+          <div className="addform_inner_first_div">
+            <NavigationPanel />
+            <div className="login_page_form_container addcar_form_container">
+              <h2>Fill The Form To Add A Car</h2>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>New Model</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>More succesfull</Modal.Body>
+              </Modal>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  placeholder="Name"
+                  className="addform-input"
+                  required
+                />
+                <br />
+                <input
+                  type="text"
+                  name="model"
+                  onChange={handleChange}
+                  placeholder="Model"
+                  className="addform-input"
+                  required
+                />
+                <br />
+                <textarea
+                  type="text"
+                  name="description"
+                  rows="4"
+                  cols="6"
+                  onChange={handleChange}
+                  placeholder="Description"
+                  className="addform-input"
+                  required
+                />
+                <br />
+                <input
+                  type="text"
+                  name="image"
+                  onChange={handleChange}
+                  placeholder="Image URL"
+                  className="addform-input"
+                  required
+                />
+                <br />
+                <input
+                  type="number"
+                  name="price_per_day"
+                  onChange={handleChange}
+                  placeholder="Price / Day"
+                  className="addform-input"
+                  required
+                />
+                <Button type="submit" className="addcarform-btn" variant="success">Add</Button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

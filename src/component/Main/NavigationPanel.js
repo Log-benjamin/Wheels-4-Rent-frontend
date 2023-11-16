@@ -11,7 +11,7 @@ export default function NavigationPanel() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-auto bg-white">
+        <div className="col-auto">
           <ul>
             <li>
               <NavLink to="/main" className="nav-link px-2">
@@ -34,7 +34,7 @@ export default function NavigationPanel() {
                   <span className="ms-1 d-none d-sm-inline">Add a Car</span>
                 </NavLink>
               ) : (
-                <button type="button" className="normal-user">
+                <button type="button" className="normal-user add_car_btn">
                   <span className="ms-1 d-none d-sm-inline">Add a Car</span>
                 </button>
               )}
