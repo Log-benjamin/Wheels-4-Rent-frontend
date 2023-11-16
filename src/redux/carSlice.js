@@ -18,6 +18,11 @@ export const addLatestCarModel = createAsyncThunk('post/car', async (params) => 
   return response.data;
 });
 
+export const deleteCar = createAsyncThunk('car/delete', async (id) => {
+  const response = await axios.delete(`http://localhost:3000/api/v1/cars/${id}`);
+  return response.data;
+});
+
 const carSlice = createSlice({
   name: 'car',
   initialState,
@@ -29,6 +34,18 @@ const carSlice = createSlice({
     builder.addCase(fetchLatesCarModels.fulfilled, (state, action) => {
       state.loading = false;
       state.values = action.payload;
+    });
+    builder.addCase(deleteCar.pending, (state) => {
+      state.status = true;
+    });
+    builder.addCase(deleteCar.fulfilled, (state, action) => {
+      state.status = false;
+      const newState = state.values.filter((car) => car.id !== action.payload);
+      state.values = newState;
+    });
+    builder.addCase(deleteCar.rejected, (state, action) => {
+      state.status = false;
+      state.error = action.error.message;
     });
   },
 });
