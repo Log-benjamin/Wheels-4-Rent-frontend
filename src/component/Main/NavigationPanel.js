@@ -31,18 +31,24 @@ export default function NavigationPanel() {
             <li>
               {currentuser === true ? (
                 <NavLink to="/add-a-car" className="nav-link px-2">
-                  <span className="ms-1 d-none d-sm-inline">Add a Car</span>
+                  <span className="ms-1 d-none d-sm-inline">Add Car</span>
                 </NavLink>
               ) : (
                 <button type="button" className="normal-user add_car_btn">
-                  <span className="ms-1 d-none d-sm-inline">Add a Car</span>
+                  <span className="ms-1 d-none d-sm-inline">Add Car</span>
                 </button>
               )}
             </li>
             <li>
-              <NavLink to="/remove-a-car" className="nav-link px-2">
-                <span className="ms-1 d-none d-sm-inline">Remove a Car</span>
-              </NavLink>
+              {currentuser === true ? (
+                <NavLink to="/remove-a-car" className="nav-link px-2">
+                  <span className="ms-1 d-none d-sm-inline">Remove Car</span>
+                </NavLink>
+              ) : (
+                <button type="button" className="normal-user rmv_btn">
+                  <span className="ms-1 d-none d-sm-inline">Remove Car</span>
+                </button>
+              )}
             </li>
           </ul>
         </div>
