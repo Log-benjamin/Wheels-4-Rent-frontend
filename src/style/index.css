@@ -36,9 +36,10 @@ body {
 
 .login_btn,
 .register_btn {
-  margin-left: 3rem;
+  margin-left: 5rem;
   border-radius: 25px;
-  padding: 0.3rem 2rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 2.5rem;
   border: none;
   background-color: #81b622;
 }
@@ -76,13 +77,14 @@ body {
 /* login and register page styling */
 
 /* Main page styling */
-.bg-body-tertiary {
+.navbar_container {
   padding-left: 3%;
   padding-right: 5%;
-  margin-bottom: 2rem;
+
+  /* margin-bottom: 2rem; */
 }
 
-.bg-body-tertiary .container {
+.navbar_container .container {
   width: 120%;
   margin-left: 3%;
   margin-right: 0;
@@ -101,7 +103,6 @@ body {
 
 .content_container {
   display: flex;
-  margin-bottom: 3rem;
 }
 
 .main_model_container {
@@ -129,7 +130,7 @@ body {
 
 .main_model_container div .d-block {
   opacity: 0.95;
-  height: 400px;
+  height: 340px;
   background-color: white;
 }
 

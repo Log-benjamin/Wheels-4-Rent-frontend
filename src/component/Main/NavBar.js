@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+import '../../style/index.css';
 
 export default function NavBar() {
   const token = localStorage.getItem('user');
@@ -14,7 +15,7 @@ export default function NavBar() {
   };
   return (
     <>
-      <Navbar className="bg-body-tertiary">
+      <Navbar className="navbar_container">
         <Navbar.Brand className="company_name">Wheels-4-Rent</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
