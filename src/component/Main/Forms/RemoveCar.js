@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import { fetchLatesCarModels, deleteCar } from '../../../redux/carSlice';
 import NavBar from '../NavBar';
 import NavigationPanel from '../NavigationPanel';
@@ -26,14 +27,13 @@ export default function RemoveCar() {
 
   return (
     <>
-      <NavBar />
       <div className="addform-top-container">
         <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
-        <div className="removeform_inner_container">
+        <div className="addform_inner_container">
+          <NavBar />
           <div className="addform_inner_first_div">
             <NavigationPanel />
             <div className="login_page_form_container addcar_form_container">
-
               <div className="table_container">
                 <table id="customers">
                   <thead>
@@ -86,7 +86,7 @@ export default function RemoveCar() {
                         {model.model}
                       </td>
                       <td>
-                        <button id={model.id} type="submit" className="delete-btn" onClick={((e) => handleClick(e))}>Delete</button>
+                        <Button id={model.id} type="submit" className="delete-btn" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
                       </td>
                     </tr>
                   ))}

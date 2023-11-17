@@ -41,10 +41,10 @@ export default function AddCar() {
   const handleClose = () => setShow(false);
   return (
     <>
-      <NavBar />
       <div className="addform-top-container">
         <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
         <div className="addform_inner_container">
+          <NavBar />
           <div className="addform_inner_first_div">
             <NavigationPanel />
             <div className="login_page_form_container addcar_form_container">
@@ -102,7 +102,7 @@ export default function AddCar() {
                   className="addform-input"
                   required
                 />
-                <Button type="submit" className="addcarform-btn" variant="success">Add</Button>
+                <Button type="submit" className="addcarform-btn" variant="success">ADD</Button>
               </form>
             </div>
           </div>
