@@ -8,74 +8,82 @@
   opacity: 0.3;
 }
 
-.reserveform_inner_container h4 {
-  text-align: center;
-  color: white;
-  margin-bottom: 0;
-}
-
-.reserve_form_container {
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 2%;
-}
-
-.reserve_form_container form label {
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.reserve_form_container form input {
-  margin-top: 0.5rem;
-}
-
-/* aklakhslak */
-
-.inputBox {
-  width: 70%;
-  height: 80px;
-  padding: 2em;
-  text-align: left;
-  border-radius: 0.3em;
-}
-
-.inputBox input[type="date"] {
-  padding: 0.5em;
-  border-radius: 0.3em;
-  border: 1px solid grey;
-  box-sizing: border-box;
-  width: 85%;
-}
-
-.flex {
-  display: flex;
-
-  /* justify-content: space-between; */
-}
-
-.city_and_car_cont {
-  width: 70%;
-  text-align: left;
-  border-radius: 0.3em;
-}
-
-.city_and_car_cont span {
-  color: white;
-}
-
-.cities_selector {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.cars_selector {
-  padding: 0.55rem;
-  border-radius: 5px;
-  color: rgb(77, 77, 77);
-}
-
 .reserve_form_inner_first_div {
   display: flex;
 }
 
-/* ajkajslgkajsgdl */
+.reserveform_inner_container h4 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.reserve_form_container {
+  margin-right: 10%;
+}
+
+.first_div,
+.second_div {
+  display: flex;
+  width: 100%;
+}
+
+.first_div label,
+.second_div label {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.first_div input,
+.second_div select {
+  margin-top: 0.5rem;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.first_div .start_date {
+  margin-right: 10%;
+}
+
+.second_div .cars,
+.first_div .start_date {
+  width: 60%;
+  margin-right: 10%;
+}
+
+.second_div .city,
+.first_div .end_date {
+  width: 60%;
+}
+
+.smallsize_car_display {
+  width: 100%;
+  height: 200px;
+  border-radius: 3px;
+  margin-top: 1px;
+}
+
+.reserve_btn_cont {
+  display: flex;
+  justify-content: right;
+}
+
+.reserve_btn {
+  margin-top: 150px;
+  padding: 0.5rem 1.75rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background-color: #81b622;
+}
+
+.myreservationCarImage {
+  width: 90%;
+  height: 75px;
+}
+
+p {
+  margin: 0;
+}
