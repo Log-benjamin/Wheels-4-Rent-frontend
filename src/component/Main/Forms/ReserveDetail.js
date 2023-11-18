@@ -16,16 +16,16 @@ import '../../../style/reserve.css';
 
 const cities = city;
 
-export default function Reserve() {
+export default function ReserveDetail(selectedcar) {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
-  const latestModels = useSelector((state) => state.car.values);
   const detailModelInfo = useSelector((state) => state.detailCarInfo.values);
   const token = localStorage.getItem('user');
   const result = jwtDecode(token);
   const userID = result.id;
-  const selectedCarID = localStorage.getItem('carID');
+  const selectedCarID = Number(localStorage.getItem('carID'));
+
   useEffect(() => {
     dispatch(fetchLatesCarModels());
   }, [dispatch]);
@@ -35,7 +35,7 @@ export default function Reserve() {
       start_date: '',
       end_date: '',
       city: '',
-      car_id: 1,
+      car_id: selectedCarID,
       user_id: userID,
     },
   });
@@ -66,25 +66,15 @@ export default function Reserve() {
       },
     }));
   };
-  const handleSelectCar = (e) => {
-    const carID = Number(e.target.value);
-    setNewReservation((prevReservation) => ({
-      ...prevReservation,
-      reservation: {
-        ...prevReservation.reservation,
-        car_id: carID,
-      },
-    }));
-    localStorage.setItem('carID', carID);
-  };
+
   useEffect(() => {
-    dispatch(detailCarInfo(selectedCarID));
-  }, [dispatch, selectedCarID]);
+    dispatch(detailCarInfo(selectedcar));
+  }, [dispatch, selectedcar]);
+
   const handleClose = () => {
     setShow(false);
     navigate('/main');
   };
-
   return (
     <div>
       <div className="reserveform-top-container">
@@ -116,14 +106,10 @@ export default function Reserve() {
                 <div className="second_div">
                   <label htmlFor="cars" className="cars">
                     Select Car :
-                    <select name="cars" className="cities_selector cars_selector" id="cars" onChange={(e) => handleSelectCar(e)}>
-                      {latestModels?.map((model) => (
-                        <option key={model.id} value={model.id}>
-                          {model.name}
-                          { ' - ' }
-                          {model.model}
-                        </option>
-                      ))}
+                    <select name="cars" className="cities_selector cars_selector" id="cars">
+                      <option value="one">
+                        -------
+                      </option>
                     </select>
                     <img src={detailModelInfo.image} alt="reserved-car-img" className="smallsize_car_display" />
                   </label>

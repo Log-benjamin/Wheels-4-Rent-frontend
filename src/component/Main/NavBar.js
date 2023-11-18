@@ -11,6 +11,7 @@ export default function NavBar() {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('carID');
     navigate('/');
   };
   return (

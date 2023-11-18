@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { detailCarInfo } from '../../redux/detailCarSlice';
@@ -8,6 +8,7 @@ import NavigationPanel from './NavigationPanel';
 import '../../style/detailsPage.css';
 
 export default function Detail() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
   const latestModels = useSelector((state) => state.detailCarInfo.values);
@@ -16,6 +17,10 @@ export default function Detail() {
     dispatch(detailCarInfo(id));
   }, [dispatch, id]);
 
+  const handleClick = () => {
+    localStorage.setItem('carID', id);
+    navigate('/reservee');
+  };
   return (
     <>
       <NavBar />
@@ -43,7 +48,7 @@ export default function Detail() {
             <p>{latestModels.description}</p>
           </div>
           <div className="reseve_btn_div">
-            <Button type="submit" className="login_btn login_page_btn" variant="success">
+            <Button type="submit" className="login_btn login_page_btn" onClick={handleClick} variant="success">
               Reserve
             </Button>
           </div>

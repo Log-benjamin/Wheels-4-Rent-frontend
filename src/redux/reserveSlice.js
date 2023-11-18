@@ -7,8 +7,8 @@ const initialState = {
   error: '',
 };
 
-export const fetchReservation = createAsyncThunk('fetch/reservations', async () => {
-  const response = await axios.post('http://localhost:3000/api/v1/reservation');
+export const fetchReservations = createAsyncThunk('fetch/reservations', async () => {
+  const response = await axios.get('http://localhost:3000/api/v1/reservation');
   return response.data;
 });
 
@@ -17,14 +17,19 @@ export const createReservation = createAsyncThunk('post/reservations', async (ne
   return response.data;
 });
 
+export const deleteReservation = createAsyncThunk('delete/reservation', async (id) => {
+  const response = await axios.delete(`http://localhost:3000/api/v1/reservation/${id}`);
+  return response.data.id;
+});
+
 const reservationSlice = createSlice({
-  name: 'reservation',
+  name: 'reserve',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(fetchReservation.pending, (state) => {
+    builder.addCase(fetchReservations.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(fetchReservation.fulfilled, (state, action) => {
+    builder.addCase(fetchReservations.fulfilled, (state, action) => {
       state.loading = false;
       state.reservations = action.payload;
     });

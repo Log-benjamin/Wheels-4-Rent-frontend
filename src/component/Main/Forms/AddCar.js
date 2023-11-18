@@ -51,9 +51,9 @@ export default function AddCar() {
               <h2>Fill The Form To Add A Car</h2>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>New Model</Modal.Title>
+                  <Modal.Title>Confirmed</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>More succesfull</Modal.Body>
+                <Modal.Body>New car was added succesfully</Modal.Body>
               </Modal>
               <form onSubmit={handleSubmit}>
                 <input

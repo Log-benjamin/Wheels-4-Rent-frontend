@@ -27,6 +27,7 @@ function LogIn() {
         setUserName('');
         setPassword('');
         navigate('/main');
+        localStorage.setItem('carID', 1);
       }
     });
   };
