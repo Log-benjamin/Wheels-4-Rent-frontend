@@ -9,6 +9,7 @@ import MyReservation from './Main/Forms/MyReservation';
 import AddCar from './Main/Forms/AddCar';
 import RemoveCar from './Main/Forms/RemoveCar';
 import Detail from './Main/Detail';
+import ReserveDetail from './Main/Forms/ReserveDetail';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/main" element={<Main />} />
           <Route path="/details/:id" element={<Detail />} />
           <Route path="/reserve" element={<Reserve />} />
+          <Route path="/reservee" element={<ReserveDetail />} />
           <Route path="/my-reservations" element={<MyReservation />} />
           <Route path="/add-a-car" element={<AddCar />} />
           <Route path="/remove-a-car" element={<RemoveCar />} />

@@ -23,7 +23,9 @@ export default function RemoveCar() {
     dispatch(deleteCar(id));
     setShow(true);
   };
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+  };
 
   return (
     <>
@@ -49,7 +51,7 @@ export default function RemoveCar() {
                     <tr key={model.id}>
                       <Modal className="my-modal" show={show} onHide={handleClose}>
                         <Modal.Header closeButton className="my-modal-header">
-                          <Modal.Title className="my-modal-title">Request to Delete Confirmed</Modal.Title>
+                          <Modal.Title className="my-modal-title">Request to Delete is Confirmed</Modal.Title>
                         </Modal.Header>
                         <Modal.Body className="my-modal-body">
                           <p>
@@ -86,7 +88,7 @@ export default function RemoveCar() {
                         {model.model}
                       </td>
                       <td>
-                        <Button id={model.id} type="submit" className="delete-btn" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
+                        <Button id={model.id} type="submit" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
                       </td>
                     </tr>
                   ))}
