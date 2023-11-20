@@ -1,7 +1,8 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import reactLogo from '../../assets/9296454.gif';
 
@@ -9,6 +10,7 @@ function Register() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -18,15 +20,29 @@ function Register() {
     formData.append('email', emailRef.current.value);
     formData.append('password', passwordRef.current.value);
 
-    axios.post('http://localhost:3000/api/v1/registration', formData).then(() => navigate('/login'));
+    axios.post('http://localhost:3000/api/v1/registration', formData);
+    setShow(true);
   };
 
+  const handleClose = () => {
+    setShow(false);
+    navigate('/login');
+  };
   return (
     <div className="home_container">
       <img className="home_logo" src={reactLogo} alt="react logo" />
       <div className="home_inner_container">
         <h2>Your Ultimate Travel Companion, Rent Now</h2>
         <div className="login_page_form_container">
+          <Modal className="my-modal" show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Registered Successfully.</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              You can now Login using your username and password
+            </Modal.Body>
+
+          </Modal>
           <form onSubmit={handleSubmit}>
             <input
               type="username"
