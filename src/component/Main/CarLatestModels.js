@@ -21,9 +21,9 @@ function CarLatestModels() {
           <Carousel.Item key={model.id}>
             <Link to={`/details/${model.id}`}>
               <img src={model.image} alt="car-model" className="d-block w-100" />
-              <Carousel.Caption>
+              <Carousel.Caption className="model-name_and_model">
                 <h3>{model.name}</h3>
-                <p>{model.model}</p>
+                <h6>{model.model}</h6>
               </Carousel.Caption>
             </Link>
           </Carousel.Item>

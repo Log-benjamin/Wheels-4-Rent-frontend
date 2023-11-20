@@ -11,6 +11,8 @@ export default function NavBar() {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('startdate');
+    localStorage.removeItem('enddate');
     localStorage.removeItem('carID');
     navigate('/');
   };
@@ -20,7 +22,7 @@ export default function NavBar() {
         <Navbar.Brand className="company_name">Wheels-4-Rent</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text className="user_name">
             Welcome:
             {' '}
             {result.name}
