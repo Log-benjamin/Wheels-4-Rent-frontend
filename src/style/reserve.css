@@ -8,8 +8,20 @@
   opacity: 0.3;
 }
 
+.reserveform_inner_container {
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+
 .reserve_form_inner_first_div {
   display: flex;
+  justify-content: space-between;
+}
+
+.reservecar_form_container {
+  margin-left: 2rem;
+  margin-top: 0;
 }
 
 .reserveform_inner_container h4 {
@@ -20,6 +32,7 @@
 
 .reserve_form_container {
   margin-right: 10%;
+  width: 70%;
 }
 
 .first_div,
@@ -44,19 +57,15 @@
   width: 100%;
 }
 
-.first_div .start_date {
-  margin-right: 10%;
-}
-
 .second_div .cars,
 .first_div .start_date {
-  width: 60%;
-  margin-right: 10%;
+  width: 50%;
+  margin-right: 5%;
 }
 
 .second_div .city,
 .first_div .end_date {
-  width: 60%;
+  width: 50%;
 }
 
 .smallsize_car_display {

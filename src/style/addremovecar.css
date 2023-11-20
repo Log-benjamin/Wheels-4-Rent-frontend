@@ -17,16 +17,25 @@
   opacity: 0.6;
 }
 
-.addform_inner_container,
-.reserveform_inner_container {
+.addform_inner_container {
   top: 0;
   width: 100%;
   position: absolute;
 }
 
-.addform_inner_first_div,
-.reserveform_inner_first_div {
+.addform_inner_first_div {
   display: flex;
+  margin: 0 5% 0 0;
+}
+
+.addcar_form_container {
+  width: 80%;
+}
+
+.addcar_form_container form div {
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 1rem;
 }
 
 .addcar_form_container h2 {
@@ -34,10 +43,13 @@
   text-align: center;
 }
 
-.addcar_form_container {
-  margin-top: 0;
-  margin-left: 1rem;
-  padding-right: 1rem;
+.addcar_form_container form input {
+  height: 2.2rem;
+  width: 70%;
+  border: none;
+  padding-left: 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
 }
 
 .addcar_form_container .addform-input {
@@ -52,12 +64,17 @@
   resize: none;
 }
 
+.second_div_with_addbtn {
+  width: 100%;
+  position: relative;
+}
+
 .addcarform-btn {
-  margin-left: 66%;
-  margin-top: 0.5rem;
-  font-size: 1.3rem;
-  padding: 0.4rem 3rem;
-  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
   border-radius: 10px;
   background-color: #81b622;
 }
@@ -72,13 +89,17 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.removecar_form_container {
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 0;
+}
+
 .table_container::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
   font-size: 1.3rem;
   text-align: center;
   background-color: #81b622;
@@ -116,25 +137,8 @@
   color: black;
 }
 
-.my-modal .my-modal-header {
-  background-color: red;
-}
-
-.my-modal .my-modal-title {
-  color: white;
-}
-
-.my-modal .my-modal-body {
-  background-color: lightblue;
-  font-weight: 900;
-}
-
-.my-modal .my-modal-footer {
+.my-modal-title {
   color: red;
-}
-
-.my-modal .my-modal-footer:hover {
-  background-color: lightblue;
 }
 
 /* removecar styling  */
