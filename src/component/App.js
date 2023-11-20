@@ -10,6 +10,7 @@ import AddCar from './Main/Forms/AddCar';
 import RemoveCar from './Main/Forms/RemoveCar';
 import Detail from './Main/Detail';
 import ReserveDetail from './Main/Forms/ReserveDetail';
+import PrivateRoute from './Home/PrivateRoute';
 
 function App() {
   return (
@@ -24,8 +25,10 @@ function App() {
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/reservee" element={<ReserveDetail />} />
           <Route path="/my-reservations" element={<MyReservation />} />
-          <Route path="/add-a-car" element={<AddCar />} />
-          <Route path="/remove-a-car" element={<RemoveCar />} />
+          <Route exact element={<PrivateRoute />}>
+            <Route path="/add-a-car" element={<AddCar />} />
+            <Route path="/remove-a-car" element={<RemoveCar />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
