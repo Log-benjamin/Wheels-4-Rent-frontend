@@ -1,6 +1,9 @@
 .container-fluid {
-  width: 250px;
+  width: 150px;
   margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 0;
+  padding: 0;
 }
 
 .container-fluid ul {

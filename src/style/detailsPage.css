@@ -1,17 +1,18 @@
 .container-fluid ul,
 .details_image_container {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .details_image_container .detail-block {
-  width: 500px;
-  height: 350px;
+  width: 90%;
+  height: 275px;
+  margin-left: 2rem;
   border-radius: 10px;
   opacity: 0.8;
 }
 
 .description_container {
-  width: 60%;
+  width: 40%;
   margin-left: 2%;
   margin-right: 3%;
 }
@@ -25,7 +26,7 @@
 .price_per_day_div {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   background-color: lightgray;
   border-radius: 3px;
   margin-bottom: 1rem;
@@ -38,12 +39,12 @@
 
 .description_div {
   background-color: rgb(212, 214, 214);
-  height: 200px;
+  height: 175px;
   width: 100%;
   overflow-y: scroll;
   padding: 0.5rem;
   border-radius: 3px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }

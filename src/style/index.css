@@ -99,27 +99,35 @@ body {
   transform: rotate(-10deg);
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
+  color: white;
+}
+
+.user_name {
+  color: white;
+  font-size: 1.3rem;
 }
 
 .content_container {
   display: flex;
+  justify-content: space-between;
 }
 
 .main_model_container {
-  width: 100%;
+  width: 70%;
   margin-right: 7%;
 }
 
 .main_model_container h2 {
+  color: white;
   text-align: center;
   margin-top: 0;
   padding-top: 0;
 }
 
-.main_model_container p {
+.main_model_container h4 {
   text-align: center;
-  font-size: 0.9rem;
-  color: rgb(178, 178, 178);
+  font-size: 1.4rem;
+  color: black;
   padding-left: 0.9rem;
 }
 
@@ -130,7 +138,7 @@ body {
 
 .main_model_container div .d-block {
   opacity: 0.95;
-  height: 340px;
+  height: 350px;
   background-color: white;
 }
 
