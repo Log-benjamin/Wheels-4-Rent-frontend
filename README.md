@@ -16,6 +16,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#live-demo)
   - [🔗 Link for the Backend](#backend)
   - [🔗 API Documentations](#APIDoc)
   - [🔗 Kanban Board](#kanban)
@@ -62,6 +63,10 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo
+
+[Wheels-4-Rent]()
+
 <!-- FRONTEND -->
 ## 🔗 Link for the Backend <a name="backend"></a>
 
@@ -83,6 +88,7 @@
 - [Initial Kanban Board](https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 
@@ -119,7 +125,14 @@ To run the project, you will need to execute:
 ```bash
    npm start
 ```
+### If you want to add and remove a car you should log in as an admin user.
 
+```bash
+ADMIN Credentials
+
+username: admin
+password: 123456789
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
