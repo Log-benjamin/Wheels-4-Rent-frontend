@@ -11,6 +11,7 @@ import NavigationPanel from '../NavigationPanel';
 import lambergini from '../../../assets/9296454.gif';
 import '../../../style/myReservation.css';
 import { fetchReservations, deleteReservation } from '../../../redux/reserveSlice';
+import LoadSpinner from '../Spinner';
 
 const MyReservation = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const MyReservation = () => {
   const result = jwtDecode(token);
   const dispatch = useDispatch();
   const fetchRes = useSelector((state) => state.reservation.reservations);
+  const loading = useSelector((state) => state.reservation.loading);
   const filteredReservations = fetchRes.filter((reservation) => reservation.user_id === result.id);
 
   useEffect(() => {
@@ -89,7 +91,11 @@ const MyReservation = () => {
                           £
                           {reserve.price}
                         </p>
-                        <img src={reserve.image} className="myreservationCarImage" alt="reservedCarphoto" />
+                        {loading === true ? (
+                          <LoadSpinner />
+                        ) : (
+                          <img src={reserve.image} className="myreservationCarImage" alt="reservedCarphoto" />
+                        )}
                       </td>
                       <td>
                         <strong>
