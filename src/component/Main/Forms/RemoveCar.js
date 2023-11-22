@@ -33,23 +33,23 @@ const RemoveCar = () => {
 
   return (
     <>
-      <div className="addform-top-container">
+      <div>
         <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
-        <div className="addform_inner_container">
+        <div className="removepage_inner_container">
           <Mobilemenu />
           <NavBar />
-          <div className="addform_inner_first_div">
+          <div className="removepage_inner_first_div">
             <NavigationPanel />
-            <div className="login_page_form_container removecar_form_container">
+            <div className="removecar_form_container">
               <Modal className="my-modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton className="my-modal-header">
                   <Modal.Title className="my-modal-title">Request to Delete is Confirmed</Modal.Title>
                 </Modal.Header>
               </Modal>
-              <div className="table_container ">
-                <table id="customers">
+              <div className="removepage_table_container">
+                <table id="removepage_customers">
                   <thead>
-                    <tr className="first_row">
+                    <tr>
                       <th>Id</th>
                       <th>Name</th>
                       <th>Model</th>
@@ -66,7 +66,7 @@ const RemoveCar = () => {
                         {model.model}
                       </td>
                       <td>
-                        <Button id={model.id} type="submit" className="delte_button" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
+                        <Button id={model.id} type="submit" className="removepage_delte_button" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
                       </td>
                     </tr>
                   ))}

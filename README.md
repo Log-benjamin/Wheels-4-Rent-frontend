@@ -48,7 +48,7 @@
 </details>
 
 
-<!-- Features -->
+<!-- FEATURES -->
 
 ### Key Features <a name="key-features"></a>
 
@@ -67,10 +67,10 @@
 
 [Wheels-4-Rent]()
 
-<!-- FRONTEND -->
+<!-- BACKEND -->
 ## 🔗 Link for the Backend <a name="backend"></a>
 
-- [Wheels-4-Rent Frontend](https://github.com/Log-benjamin/Wheels-4-Rent-backend)
+- [Wheels-4-Rent Backend](https://github.com/Log-benjamin/Wheels-4-Rent-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,6 +85,7 @@
 
 ## 🔗 Kanban Board <a name="kanban"></a>
 - [Kanban Board](https://github.com/Log-benjamin/Wheels-4-Rent-backend/projects/1)
+
 - [Initial Kanban Board](https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -162,7 +163,7 @@ password: 123456789
   </ul>
 <br />
 
-👤 **Log-benjamin**
+👤 **Binyam Tegene**
 
  <ul>
     <li>

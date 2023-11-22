@@ -66,22 +66,21 @@ const MyReservation = () => {
                   </thead>
                   {filteredReservations?.map((reserve) => (
                     <tr key={reserve.id}>
-                      <td>
-                        From :
+                      <td className="myreservation_startenddate">
                         <strong>
                           {reserve.start_date}
                         </strong>
                         <br />
+                        To
                         <br />
-                        To :
                         <strong>
                           {reserve.end_date}
                         </strong>
                       </td>
-                      <td>
+                      <td className="myreservation_city">
                         <strong>{reserve.city}</strong>
                       </td>
-                      <td className="carInfoCol">
+                      <td className="myreservation_carinfo">
                         <strong>
                           {reserve.car}
                           {' - '}
@@ -97,13 +96,13 @@ const MyReservation = () => {
                           <img src={reserve.image} className="myreservationCarImage" alt="reservedCarphoto" />
                         )}
                       </td>
-                      <td>
+                      <td className="myreservation_totalprice">
                         <strong>
                           £
                           {reserve.total_price}
                         </strong>
                       </td>
-                      <td>
+                      <td className="myreservation_changes">
                         <Button id={reserve.id} type="submit" onClick={((e) => handleClick(e))} variant="warning">Cancel</Button>
                       </td>
                     </tr>
