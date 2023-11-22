@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import '../../style/index.css';
+import '../../style/topnavbar.css';
 
 export default function NavBar() {
   const token = localStorage.getItem('user');
@@ -12,6 +12,8 @@ export default function NavBar() {
   const handleLogOut = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('carID');
+    localStorage.removeItem('startdate');
+    localStorage.removeItem('enddate');
     navigate('/');
   };
   return (
@@ -20,7 +22,7 @@ export default function NavBar() {
         <Navbar.Brand className="company_name">Wheels-4-Rent</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text className="user_name">
             Welcome:
             {' '}
             {result.name}

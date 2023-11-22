@@ -25,7 +25,7 @@ export default function NavigationPanel() {
             </li>
             <li>
               <NavLink to="/my-reservations" className="nav-link px-2">
-                <span className="ms-1 d-none d-sm-inline">My reservations</span>
+                <span className="ms-1 d-none d-sm-inline">My Reservations</span>
               </NavLink>
             </li>
             <li>

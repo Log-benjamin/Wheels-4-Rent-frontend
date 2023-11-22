@@ -8,10 +8,10 @@ import { fetchLatesCarModels } from '../../../redux/carSlice';
 import { detailCarInfo } from '../../../redux/detailCarSlice';
 import { createReservation } from '../../../redux/reserveSlice';
 import NavBar from '../NavBar';
+import Mobilemenu from '../Mobilemenu';
 import NavigationPanel from '../NavigationPanel';
 import city from './majorCity';
 import lambergini from '../../../assets/9296454.gif';
-import '../../../style/addremovecar.css';
 import '../../../style/reserve.css';
 
 const cities = city;
@@ -36,17 +36,35 @@ export default function Reserve() {
       end_date: '',
       city: '',
       car_id: 1,
+      days: 0,
       user_id: userID,
     },
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const startenddate = e.target.value;
     setNewReservation((prevReservation) => ({
       ...prevReservation,
       reservation: {
         ...prevReservation.reservation,
         [name]: value,
+      },
+    }));
+    if (e.target.name === 'start_date') {
+      localStorage.setItem('startdate', startenddate);
+    } else {
+      localStorage.setItem('enddate', startenddate);
+    }
+    const one = new Date(localStorage.getItem('startdate'));
+    const two = new Date(localStorage.getItem('enddate'));
+    const timeDifference = two - one;
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    setNewReservation((prevReservation) => ({
+      ...prevReservation,
+      reservation: {
+        ...prevReservation.reservation,
+        days: daysDifference,
       },
     }));
   };
@@ -82,7 +100,7 @@ export default function Reserve() {
   }, [dispatch, selectedCarID]);
   const handleClose = () => {
     setShow(false);
-    navigate('/main');
+    navigate('/my-reservations');
   };
 
   return (
@@ -90,6 +108,7 @@ export default function Reserve() {
       <div className="reserveform-top-container">
         <img className="lambo_res_logo" src={lambergini} alt="lambergini-logo" />
         <div className="reserveform_inner_container">
+          <Mobilemenu />
           <NavBar />
           <div className="reserve_form_inner_first_div">
             <NavigationPanel />
@@ -132,7 +151,7 @@ export default function Reserve() {
                     <select name="city" className="cities_selector cars_selector" id="city" onChange={(e) => handleCityChange(e)}>
                       {cities?.map((city) => (
                         <option key={city.value} value={city.value}>
-                          {city.label}
+                          {city.value}
                         </option>
                       ))}
                     </select>

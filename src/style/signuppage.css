@@ -1,0 +1,95 @@
+.signuppage_container {
+  background-color: #fa0;
+  height: 100%;
+  position: relative;
+}
+
+.signuppage_bg_logo {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+
+.signuppage_inner_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signuppage_inner_container h1 {
+  transform: rotate(-10deg);
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  margin-top: 6rem;
+  font-size: 3.5rem;
+  color: white;
+}
+
+.signuppage_inner_container h2 {
+  display: none;
+}
+
+.signuppage_form_container {
+  margin-top: 5rem;
+}
+
+.signuppage_form_container form input {
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  padding-left: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.signuppage_register_btn {
+  width: 100%;
+  border: none;
+  padding: 0.6rem;
+  background-color: #81b622;
+}
+
+@media screen and (min-width: 768px) {
+  .signuppage_inner_container h1 {
+    display: none;
+  }
+
+  .signuppage_inner_container h2 {
+    display: block;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin-top: 6rem;
+    font-size: 3.5rem;
+    color: white;
+  }
+
+  .signuppage_form_container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .signuppage_form_container form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+  }
+
+  .signuppage_form_container form input {
+    width: 60%;
+    border-radius: 25px;
+    margin-bottom: 0;
+  }
+
+  .signuppage_register_btn {
+    width: 60%;
+    border-radius: 25px;
+    margin-top: 1.5rem;
+  }
+}

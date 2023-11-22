@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import reactLogo from '../../assets/9296454.gif';
+import lambergini from '../../assets/9296454.gif';
+import '../../style/homepage.css';
 
 function Home() {
   const navigate = useNavigate();
@@ -12,16 +13,16 @@ function Home() {
     navigate('/signup');
   };
   return (
-    <div className="home_container">
-      <img className="home_logo" src={reactLogo} alt="react logo" />
-      <div className="home_inner_container">
+    <div className="homepage_container">
+      <img className="homepage_bg_logo" src={lambergini} alt="homepage_bg_logo" />
+      <div className="homepage_inner_container">
+        <h1>Wheels-4-Rent</h1>
         <h2>Renting Made Easy, Memories Made Forever</h2>
-        <div className="login_register_container">
-          <Button onClick={loginRouteChange} className="login_btn" variant="success">Log In</Button>
-          <Button onClick={registerRouteChange} className="register_btn" variant="success">Register</Button>
+        <div className="homepage_log_reg_container">
+          <Button onClick={loginRouteChange} className="homepage_login_btn" variant="success">Log In</Button>
+          <Button onClick={registerRouteChange} className="homePage_register_btn" variant="success">Register</Button>
         </div>
       </div>
-
     </div>
   );
 }

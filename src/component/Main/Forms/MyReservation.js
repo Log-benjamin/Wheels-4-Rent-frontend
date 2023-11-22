@@ -6,9 +6,10 @@ import { jwtDecode } from 'jwt-decode';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import NavBar from '../NavBar';
+import Mobilemenu from '../Mobilemenu';
 import NavigationPanel from '../NavigationPanel';
 import lambergini from '../../../assets/9296454.gif';
-import '../../../style/addremovecar.css';
+import '../../../style/myReservation.css';
 import { fetchReservations, deleteReservation } from '../../../redux/reserveSlice';
 
 export default function RemoveCar() {
@@ -36,50 +37,54 @@ export default function RemoveCar() {
 
   return (
     <>
-      <div className="addform-top-container">
-        <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
-        <div className="addform_inner_container">
+      <div className="myreservationpage_container">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>You have canceled this reservation</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Payment will be Reimbursed</Modal.Body>
+        </Modal>
+        <img className="myreservationpage_bg_logo" src={lambergini} alt="lambergini-logo" />
+        <div className="myreservationpage_inner_container">
+          <Mobilemenu />
           <NavBar />
-          <div className="addform_inner_first_div">
+          <div className="myreservationpage_inner_first_div">
             <NavigationPanel />
-            <div className="login_page_form_container addcar_form_container">
-              <div className="table_container">
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>You have canceled this reservation</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>Payment will be Reimbursed</Modal.Body>
-                </Modal>
+            <div>
+              <div className="myReservation_table_container">
                 <table id="customers">
                   <thead>
                     <tr className="first_row">
                       <th>Date</th>
                       <th>City</th>
                       <th>Selected Car</th>
-                      <th>Change</th>
+                      <th>Total Price</th>
+                      <th>Changes</th>
                     </tr>
                   </thead>
                   {filteredReservations?.map((reserve) => (
                     <tr key={reserve.id}>
                       <td>
-                        <p>
-                          From :
-                          <strong>{reserve.start_date}</strong>
-                        </p>
-                        <p>
-                          To :
-                          <strong>{reserve.end_date}</strong>
-                        </p>
+                        From :
+                        <strong>
+                          {reserve.start_date}
+                        </strong>
+                        <br />
+                        <br />
+                        To :
+                        <strong>
+                          {reserve.end_date}
+                        </strong>
                       </td>
                       <td>
                         <strong>{reserve.city}</strong>
                       </td>
-                      <td>
-                        <p>
+                      <td className="carInfoCol">
+                        <strong>
                           {reserve.car}
                           {' - '}
                           {reserve.model}
-                        </p>
+                        </strong>
                         <p>
                           £
                           {reserve.price}
@@ -87,7 +92,13 @@ export default function RemoveCar() {
                         <img src={reserve.image} className="myreservationCarImage" alt="reservedCarphoto" />
                       </td>
                       <td>
-                        <Button id={reserve.id} type="submit" onClick={((e) => handleClick(e))} variant="danger">Cancel</Button>
+                        <strong>
+                          £
+                          {reserve.total_price}
+                        </strong>
+                      </td>
+                      <td>
+                        <Button id={reserve.id} type="submit" onClick={((e) => handleClick(e))} variant="warning">Cancel</Button>
                       </td>
                     </tr>
                   ))}

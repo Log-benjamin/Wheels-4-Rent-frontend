@@ -1,11 +1,14 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import reactLogo from '../../assets/9296454.gif';
+import lambergini from '../../assets/9296454.gif';
+import '../../style/signuppage.css';
 
 function Register() {
+  const [show, setShow] = useState(false);
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -18,15 +21,21 @@ function Register() {
     formData.append('email', emailRef.current.value);
     formData.append('password', passwordRef.current.value);
 
-    axios.post('http://localhost:3000/api/v1/registration', formData).then(() => navigate('/login'));
+    axios.post('http://localhost:3000/api/v1/registration', formData);
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+    navigate('/login');
   };
 
   return (
-    <div className="home_container">
-      <img className="home_logo" src={reactLogo} alt="react logo" />
-      <div className="home_inner_container">
+    <div className="signuppage_container">
+      <img className="signuppage_bg_logo" src={lambergini} alt="signuppage_bg_logo" />
+      <div className="signuppage_inner_container">
+        <h1>Wheels-4-Rent</h1>
         <h2>Your Ultimate Travel Companion, Rent Now</h2>
-        <div className="login_page_form_container">
+        <div className="signuppage_form_container">
           <form onSubmit={handleSubmit}>
             <input
               type="username"
@@ -57,8 +66,14 @@ function Register() {
               ref={passwordRef}
               required
             />
-            <Button type="submit" className="login_btn login_page_btn" variant="success">Register</Button>
+            <Button type="submit" className="signuppage_register_btn" variant="success">Register</Button>
           </form>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Your are now Registered.</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>You can Login using your username and password</Modal.Body>
+          </Modal>
         </div>
       </div>
     </div>
