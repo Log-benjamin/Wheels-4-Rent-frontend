@@ -1,12 +1,12 @@
 <a name="readme-top"></a>
 
 <div align="center">
-<img  src='./app/assets/images/9296454.gif' width="300px">
+<img  src='./src/assets/9296454.gif' width="300px">
   <h1><b>Wheels-4-Rent</b></h1>
 
 </div>
 
-# Backend
+# Frontend
 
 <!-- TABLE OF CONTENTS -->
 
@@ -16,7 +16,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🔗 Link for the Frontend](#frontend)
+  - [🔗 Link for the Backend](#backend)
   - [🔗 API Documentations](#APIDoc)
   - [🔗 Kanban Board](#kanban)
   - [💻 Getting Started ](#-getting-started-)
@@ -41,18 +41,11 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Server</summary>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-    <li><a href="https://rubyonrails.org/">Rails</a></li>
+  <summary>React</summary>
+    <li><a href="https://react.dev/">React JS</a></li>
+    <li><a href="https://redux-toolkit.js.org/">Redux ToolKit</a></li>
 </details>
-<details>
-<summary>Test</summary>
-    <li><a href="https://rspec.info/">Rspec</a></li>
-</details>
-<details>
-  <summary>Database</summary>
-    <li><a href="https://www.postgresql.org/">Postgres</a></li>
-</details>
+
 
 <!-- Features -->
 
@@ -70,9 +63,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FRONTEND -->
-## 🔗 Link for the Frontend <a name="frontend"></a>
+## 🔗 Link for the Backend <a name="backend"></a>
 
-- [Wheels-4-Rent Frontend](https://github.com/Log-benjamin/Wheels-4-Rent-frontend)
+- [Wheels-4-Rent Frontend](https://github.com/Log-benjamin/Wheels-4-Rent-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +73,7 @@
 
 ## 🔗 Link for the API Documentations <a name="APIDoc"></a>
 
-- open the server in localhost:3000 first
+- open the backend server in localhost:3000 first
 - [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
 
 <!-- KANBAN -->
@@ -101,50 +94,12 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-```
-    ruby >= 3.2.0
-    rails >= 7.0
-    postgres >- 15.3
-```
-
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```bash
-  git clone https://github.com/Log-benjamin/Wheels-4-Rent-backend
-```
-
-You need to setup database for these project
-
-```
-  development = Wheels-4-Rent_dev
-  test        = Wheels-4-Rent_test
-  production  = Wheels-4-Rent_prod
-```
-
-or you can use your own database and change the ```config/database.yml```
-
-```yml
-  default: &default
-    adapter: postgresql
-    encoding: unicode
-    pool: 5
-    username: [your_username]
-    password: [your_password]
-    host: localhost
-
-  development:
-    <<: *default
-    database: [your_database_for_development]
-
-  test:
-    <<: *default
-    database: [your_database_for_test]
-
-  production:
-    <<: *default
-    database: [your_database_for_production]
+  git clone https://github.com/Log-benjamin/Wheels-4-Rent-frontend
 ```
 
 ### Install
@@ -153,23 +108,17 @@ Install this project with:
 
 ```bash
   cd Wheels-4-Rent
-  bundle install
+  npm install
 ```
 
 it will install the required gemfile for running the project
 
 ### Usage
 
-create the database, run migration, and seed files:
-
+To run the project, you will need to execute:
 ```bash
-   rails db:create
-   rails db:migrate
-   rails db:seed
+   npm start
 ```
-
-## Makesure the backend is running on ```localhost:3000```
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -231,7 +180,7 @@ create the database, run migration, and seed files:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Add additional Models for more functionality**
+- **Better efficiency of the app minimize code**
 - **Deploy the app so it can be accessible to anyone.**
 
 
