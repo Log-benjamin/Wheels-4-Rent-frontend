@@ -11,7 +11,7 @@ import NavigationPanel from '../NavigationPanel';
 import lambergini from '../../../assets/9296454.gif';
 import '../../../style/removecar.css';
 
-export default function RemoveCar() {
+const RemoveCar = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
@@ -78,4 +78,6 @@ export default function RemoveCar() {
       </div>
     </>
   );
-}
+};
+
+export default RemoveCar;

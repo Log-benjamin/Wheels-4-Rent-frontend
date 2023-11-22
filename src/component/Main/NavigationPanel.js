@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import '../../style/navigationPanel.css';
 
-export default function NavigationPanel() {
+const NavigationPanel = () => {
   const token = localStorage.getItem('user');
   const result = jwtDecode(token);
   const currentuser = result.isAdmin;
@@ -55,4 +55,5 @@ export default function NavigationPanel() {
       </div>
     </div>
   );
-}
+};
+export default NavigationPanel;

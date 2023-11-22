@@ -9,7 +9,7 @@ import NavigationPanel from './NavigationPanel';
 import '../../style/detailsPage.css';
 import lambergini from '../../assets/9296454.gif';
 
-export default function Detail() {
+const Detail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -71,4 +71,5 @@ export default function Detail() {
       </div>
     </>
   );
-}
+};
+export default Detail;

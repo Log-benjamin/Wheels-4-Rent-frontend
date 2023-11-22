@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import '../../style/topnavbar.css';
 
-export default function NavBar() {
+const NavBar = () => {
   const token = localStorage.getItem('user');
   const result = jwtDecode(token);
   const navigate = useNavigate();
@@ -33,4 +33,6 @@ export default function NavBar() {
       </Navbar>
     </>
   );
-}
+};
+
+export default NavBar;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
-export default function PrivateRoutes() {
+const PrivateRoutes = () => {
   const token = localStorage.getItem('user');
   const result = jwtDecode(token);
   const user = result.isAdmin;
@@ -11,4 +11,6 @@ export default function PrivateRoutes() {
       {user ? <Outlet /> : <Navigate to="/main" />}
     </>
   );
-}
+};
+
+export default PrivateRoutes;

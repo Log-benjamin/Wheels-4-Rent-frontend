@@ -12,26 +12,24 @@ import Detail from './Main/Detail';
 import ReserveDetail from './Main/Forms/ReserveDetail';
 import PrivateRoute from './Home/PrivateRoute';
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<Register />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/details/:id" element={<Detail />} />
-          <Route path="/reserve" element={<Reserve />} />
-          <Route path="/reservee" element={<ReserveDetail />} />
-          <Route path="/my-reservations" element={<MyReservation />} />
-          <Route exact element={<PrivateRoute />}>
-            <Route path="/add-a-car" element={<AddCar />} />
-            <Route path="/remove-a-car" element={<RemoveCar />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/details/:id" element={<Detail />} />
+        <Route path="/reserve" element={<Reserve />} />
+        <Route path="/reservee" element={<ReserveDetail />} />
+        <Route path="/my-reservations" element={<MyReservation />} />
+        <Route exact element={<PrivateRoute />}>
+          <Route path="/add-a-car" element={<AddCar />} />
+          <Route path="/remove-a-car" element={<RemoveCar />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </div>
+);
 export default App;

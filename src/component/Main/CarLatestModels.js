@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchLatesCarModels } from '../../redux/carSlice';
 import LoadSpinner from './Spinner';
 
-function CarLatestModels() {
+const CarLatestModels = () => {
   const dispatch = useDispatch();
   const latestModels = useSelector((state) => state.car.values);
   const loading = useSelector((state) => state.car.loading);
@@ -38,6 +38,6 @@ function CarLatestModels() {
 
     </>
   );
-}
+};
 
 export default CarLatestModels;

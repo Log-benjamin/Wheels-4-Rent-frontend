@@ -5,7 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import Button from 'react-bootstrap/Button';
 import '../../style/mobilemenu.css';
 
-export default function Mobilemenu() {
+const Mobilemenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const token = localStorage.getItem('user');
   const result = jwtDecode(token);
@@ -78,4 +78,5 @@ export default function Mobilemenu() {
       </nav>
     </>
   );
-}
+};
+export default Mobilemenu;

@@ -11,7 +11,7 @@ import { addLatestCarModel } from '../../../redux/carSlice';
 import '../../../style/addcar.css';
 import lambergini from '../../../assets/9296454.gif';
 
-export default function AddCar() {
+const AddCar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -130,4 +130,6 @@ export default function AddCar() {
       </div>
     </>
   );
-}
+};
+
+export default AddCar;

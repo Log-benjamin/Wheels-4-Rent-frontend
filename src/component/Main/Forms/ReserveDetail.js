@@ -16,7 +16,7 @@ import '../../../style/reserve.css';
 
 const cities = city;
 
-export default function ReserveDetail(selectedcar) {
+const ReserveDetail = (selectedcar) => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
@@ -135,4 +135,5 @@ export default function ReserveDetail(selectedcar) {
       </div>
     </div>
   );
-}
+};
+export default ReserveDetail;

@@ -16,7 +16,7 @@ import '../../../style/reserve.css';
 
 const cities = city;
 
-export default function Reserve() {
+const Reserve = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
@@ -167,4 +167,6 @@ export default function Reserve() {
       </div>
     </div>
   );
-}
+};
+
+export default Reserve;

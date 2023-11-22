@@ -12,7 +12,7 @@ import lambergini from '../../../assets/9296454.gif';
 import '../../../style/myReservation.css';
 import { fetchReservations, deleteReservation } from '../../../redux/reserveSlice';
 
-export default function RemoveCar() {
+const MyReservation = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const token = localStorage.getItem('user');
@@ -110,4 +110,6 @@ export default function RemoveCar() {
       </div>
     </>
   );
-}
+};
+
+export default MyReservation;

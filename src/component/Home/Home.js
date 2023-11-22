@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import lambergini from '../../assets/9296454.gif';
 import '../../style/homepage.css';
 
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
   const loginRouteChange = () => {
     navigate('/login');
@@ -25,6 +25,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

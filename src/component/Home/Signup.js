@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import lambergini from '../../assets/9296454.gif';
 import '../../style/signuppage.css';
 
-function Register() {
+const Register = () => {
   const [show, setShow] = useState(false);
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -78,6 +78,6 @@ function Register() {
       </div>
     </div>
   );
-}
+};
 
 export default Register;

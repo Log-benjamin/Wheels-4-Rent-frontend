@@ -6,7 +6,7 @@ import { loginUser } from '../../redux/userSlice';
 import lambergini from '../../assets/9296454.gif';
 import '../../style/loginpage.css';
 
-function LogIn() {
+const LogIn = () => {
   // state
   const [username, setUserName] = useState(undefined);
   const [password, setPassword] = useState(undefined);
@@ -73,6 +73,6 @@ function LogIn() {
       </div>
     </div>
   );
-}
+};
 
 export default LogIn;
