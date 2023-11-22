@@ -8,10 +8,10 @@ import { fetchLatesCarModels } from '../../../redux/carSlice';
 import { detailCarInfo } from '../../../redux/detailCarSlice';
 import { createReservation } from '../../../redux/reserveSlice';
 import NavBar from '../NavBar';
+import Mobilemenu from '../Mobilemenu';
 import NavigationPanel from '../NavigationPanel';
 import city from './majorCity';
 import lambergini from '../../../assets/9296454.gif';
-import '../../../style/addremovecar.css';
 import '../../../style/reserve.css';
 
 const cities = city;
@@ -80,6 +80,7 @@ export default function ReserveDetail(selectedcar) {
       <div className="reserveform-top-container">
         <img className="lambo_res_logo" src={lambergini} alt="lambergini-logo" />
         <div className="reserveform_inner_container">
+          <Mobilemenu />
           <NavBar />
           <div className="reserve_form_inner_first_div">
             <NavigationPanel />
@@ -118,7 +119,7 @@ export default function ReserveDetail(selectedcar) {
                     <select name="city" className="cities_selector cars_selector" id="city" onChange={(e) => handleCityChange(e)}>
                       {cities?.map((city) => (
                         <option key={city.value} value={city.value}>
-                          {city.label}
+                          {city.value}
                         </option>
                       ))}
                     </select>

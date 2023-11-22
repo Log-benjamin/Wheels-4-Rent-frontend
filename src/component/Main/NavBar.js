@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import '../../style/index.css';
+import '../../style/topnavbar.css';
 
 export default function NavBar() {
   const token = localStorage.getItem('user');
@@ -11,9 +11,9 @@ export default function NavBar() {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('carID');
     localStorage.removeItem('startdate');
     localStorage.removeItem('enddate');
-    localStorage.removeItem('carID');
     navigate('/');
   };
   return (

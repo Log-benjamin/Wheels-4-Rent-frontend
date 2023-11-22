@@ -6,15 +6,16 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { fetchLatesCarModels, deleteCar } from '../../../redux/carSlice';
 import NavBar from '../NavBar';
+import Mobilemenu from '../Mobilemenu';
 import NavigationPanel from '../NavigationPanel';
 import lambergini from '../../../assets/9296454.gif';
-import '../../../style/addremovecar.css';
+import '../../../style/removecar.css';
 
 export default function RemoveCar() {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const latestModels = useSelector((state) => state.car.values);
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchLatesCarModels());
@@ -35,6 +36,7 @@ export default function RemoveCar() {
       <div className="addform-top-container">
         <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
         <div className="addform_inner_container">
+          <Mobilemenu />
           <NavBar />
           <div className="addform_inner_first_div">
             <NavigationPanel />
@@ -64,7 +66,7 @@ export default function RemoveCar() {
                         {model.model}
                       </td>
                       <td>
-                        <Button id={model.id} type="submit" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
+                        <Button id={model.id} type="submit" className="delte_button" onClick={((e) => handleClick(e))} variant="danger">Remove</Button>
                       </td>
                     </tr>
                   ))}

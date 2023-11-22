@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import NavBar from '../NavBar';
+import Mobilemenu from '../Mobilemenu';
 import NavigationPanel from '../NavigationPanel';
 import { addLatestCarModel } from '../../../redux/carSlice';
-import '../../../style/addremovecar.css';
+import '../../../style/addcar.css';
 import lambergini from '../../../assets/9296454.gif';
 
 export default function AddCar() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const navigate = useNavigate();
   const [carParams, setCarParams] = useState({
     car: {
       name: '',
@@ -47,9 +48,10 @@ export default function AddCar() {
   };
   return (
     <>
-      <div className="addform-top-container">
+      <div className="addcar-top-container">
         <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
         <div className="addform_inner_container">
+          <Mobilemenu />
           <NavBar />
           <div className="addform_inner_first_div">
             <NavigationPanel />

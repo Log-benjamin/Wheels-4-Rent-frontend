@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { detailCarInfo } from '../../redux/detailCarSlice';
 import NavBar from './NavBar';
-import lambergini from '../../assets/9296454.gif';
+import Mobilemenu from './Mobilemenu';
 import NavigationPanel from './NavigationPanel';
 import '../../style/detailsPage.css';
+import lambergini from '../../assets/9296454.gif';
 
 export default function Detail() {
   const navigate = useNavigate();
@@ -24,16 +25,17 @@ export default function Detail() {
   };
   return (
     <>
-      <div className="addform-top-container">
-        <img className="lambo_logo" src={lambergini} alt="lambergini-logo" />
-        <div className="addform_inner_container">
+      <div className="detailspage_container">
+        <img className="detailpage_logo" src={lambergini} alt="lambergini-logo" />
+        <div className="detailspage_inner_container">
+          <Mobilemenu />
           <NavBar />
-          <div className="content_container">
+          <div className="detailspage_content_container">
             <NavigationPanel />
             <div className="details_image_container">
-              <img src={latestModels.image} className="detail-block w-150" alt="car-1" />
+              <img src={latestModels.image} className="detail-block" alt="car-imag" />
             </div>
-            <div className="description_container">
+            <div className="detailspage_description_container">
               <h2>
                 {latestModels.name}
               </h2>
@@ -58,8 +60,8 @@ export default function Detail() {
                   </strong>
                 </p>
               </div>
-              <div className="reseve_btn_div">
-                <Button type="submit" className="login_btn login_page_btn" onClick={handleClick} variant="success">
+              <div className="reseve_btn_container">
+                <Button type="submit" className="reserve_btn" onClick={handleClick} variant="success">
                   Reserve
                 </Button>
               </div>

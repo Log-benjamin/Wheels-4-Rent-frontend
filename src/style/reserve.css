@@ -4,7 +4,7 @@
 
 .lambo_res_logo {
   width: 100%;
-  height: 100vh;
+  height: 170vh;
   opacity: 0.3;
 }
 
@@ -14,16 +14,6 @@
   position: absolute;
 }
 
-.reserve_form_inner_first_div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.reservecar_form_container {
-  margin-left: 2rem;
-  margin-top: 0;
-}
-
 .reserveform_inner_container h4 {
   text-align: center;
   color: white;
@@ -31,68 +21,113 @@
 }
 
 .reserve_form_container {
-  margin-right: 10%;
-  width: 70%;
-}
-
-.first_div,
-.second_div {
-  display: flex;
   width: 100%;
 }
 
-.first_div label,
-.second_div label {
+.reserve_form_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_form_container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_form_container form .first_div label,
+.reserve_form_container form .second_div label {
   color: white;
+  margin-left: 10%;
   margin-bottom: 1rem;
 }
 
-.first_div input,
-.second_div select {
+.reserve_form_container form .first_div input,
+.reserve_form_container form .second_div select {
+  width: 90%;
+  margin-right: 10%;
   margin-top: 0.5rem;
   padding: 0.5em;
   border-radius: 0.3em;
   border: 1px solid grey;
   box-sizing: border-box;
-  width: 100%;
-}
-
-.second_div .cars,
-.first_div .start_date {
-  width: 50%;
-  margin-right: 5%;
-}
-
-.second_div .city,
-.first_div .end_date {
-  width: 50%;
 }
 
 .smallsize_car_display {
-  width: 100%;
+  width: 90%;
   height: 200px;
   border-radius: 3px;
   margin-top: 1px;
-}
-
-.reserve_btn_cont {
-  display: flex;
-  justify-content: right;
+  margin-bottom: 1rem;
 }
 
 .reserve_btn {
-  margin-top: 150px;
+  width: 90%;
+  margin-top: 1rem;
   padding: 0.5rem 1.75rem;
   font-size: 1.1rem;
   border-radius: 10px;
   background-color: #81b622;
 }
 
-.myreservationCarImage {
-  width: 90%;
-  height: 75px;
-}
+@media screen and (min-width: 768px) {
+  .lambo_res_logo {
+    height: 100vh;
+  }
 
-p {
-  margin: 0;
+  .reserve_form_inner_first_div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .reservecar_form_container {
+    margin-left: 2rem;
+    margin-top: 0;
+  }
+
+  .reserve_form_container {
+    width: 70%;
+    margin-right: 10%;
+  }
+
+  .reserve_form_container form div {
+    flex-direction: row;
+  }
+
+  .first_div,
+  .second_div {
+    display: flex;
+    width: 100%;
+  }
+
+  .first_div label,
+  .second_div label {
+    margin-left: 0;
+  }
+
+  .first_div input,
+  .second_div select {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .second_div .cars,
+  .first_div .start_date {
+    width: 60%;
+  }
+
+  .second_div .city,
+  .first_div .end_date {
+    width: 60%;
+  }
+
+  .reserve_btn_cont {
+    display: flex;
+    justify-content: right;
+  }
+
+  .reserve_btn {
+    width: 150px;
+    margin-top: 150px;
+    margin-right: 2rem;
+  }
 }

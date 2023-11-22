@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import reactLogo from '../../assets/9296454.gif';
 import { loginUser } from '../../redux/userSlice';
+import lambergini from '../../assets/9296454.gif';
+import '../../style/loginpage.css';
 
 function LogIn() {
   // state
@@ -32,11 +33,12 @@ function LogIn() {
     });
   };
   return (
-    <div className="home_container">
-      <img className="home_logo" src={reactLogo} alt="react logo" />
-      <div className="home_inner_container">
+    <div className="loginpage_container">
+      <img className="loginpage_bg_logo" src={lambergini} alt="loginpage_bg_logo" />
+      <div className="signuppage_inner_container">
+        <h1>Wheels-4-Rent</h1>
         <h2>Drive Your Way to Freedom, Rent a Car Today</h2>
-        <div className="login_page_form_container">
+        <div className="loginpage_form_container">
           <form onSubmit={handleLoginEvent}>
             <input
               type="username"
@@ -60,7 +62,7 @@ function LogIn() {
               required
             />
             <br />
-            <Button type="submit" className="login_btn login_page_btn" variant="success">
+            <Button type="submit" className="loginpage_login_btn" variant="success">
               {loading ? 'Loading...' : 'Log In'}
             </Button>
             {error && (

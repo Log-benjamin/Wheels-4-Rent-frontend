@@ -1,0 +1,74 @@
+.table_container {
+  width: 95%;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 420px;
+  overflow-y: auto;
+  border-radius: 10px;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.removecar_form_container {
+  margin-top: 0;
+}
+
+.table_container::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.table_container #customers th {
+  font-size: 1rem;
+  text-align: center;
+  background-color: #81b622;
+  color: white;
+}
+
+.table_container #customers td,
+.table_container #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 1rem;
+
+  /* padding-right: 20px; */
+}
+
+.table_container #customers thead th {
+  position: sticky;
+  top: 0;
+}
+
+.table_container #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table_container #customers tr:nth-child(even) { background-color: #acaaaaaa; }
+
+.table_container #customers tr:nth-child(odd) { background-color: #d5d0d0; }
+
+.table_container #customers tr:hover {
+  background-color: rgb(190, 112, 112);
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: black;
+}
+
+.my-modal-title {
+  color: red;
+}
+
+.table_container .removecar_form_container .delte_button {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .removecar_form_container {
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-top: 0;
+  }
+}
