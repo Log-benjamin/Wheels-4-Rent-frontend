@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@700&display=swap');
+
+.homepage_container {
+  background-color: #fa0;
+  height: 100%;
+  position: relative;
+}
+
+.homepage_bg_logo {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+
+.homepage_inner_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 96%;
+  height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homepage_inner_container h1 {
+  transform: rotate(-10deg);
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 3.7rem;
+  color: white;
+}
+
+.homepage_inner_container h2 {
+  display: none;
+}
+
+.homepage_login_btn,
+.homePage_register_btn {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: #81b622;
+}
+
+@media screen and (min-width: 768px) {
+  .homepage_inner_container {
+    display: block;
+  }
+
+  .homepage_inner_container h1 {
+    display: none;
+  }
+
+  .homepage_inner_container h2 {
+    display: block;
+    margin-top: 10rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: white;
+    font-size: 2.75rem;
+  }
+
+  .homepage_log_reg_container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .homepage_login_btn,
+  .homePage_register_btn {
+    width: 200px;
+    font-size: 1.2rem;
+    margin-left: 3rem;
+    border-radius: 25px;
+  }
+}

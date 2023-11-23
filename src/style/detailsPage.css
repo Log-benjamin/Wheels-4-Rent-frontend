@@ -1,0 +1,123 @@
+.detailspage_container {
+  height: 100%;
+  position: relative;
+}
+
+.detailpage_logo {
+  width: 100%;
+  height: 130vh;
+  opacity: 0.7;
+}
+
+.detailspage_inner_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailspage_content_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.details_image_container {
+  display: none;
+}
+
+.detailspage_description_container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.detailspage_description_container h2,
+.detailspage_description_container h5 {
+  text-align: right;
+  color: rgb(104, 71, 71);
+}
+
+.detailspage_description_container .price_per_day_div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: lightgray;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.detailspage_description_container .price_per_day_div p {
+  margin: 0;
+  padding: 0;
+}
+
+.detailspage_description_container .description_div {
+  background-color: rgb(212, 214, 214);
+  height: 200px;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.detailspage_description_container .first_p {
+  text-align: center;
+}
+
+.detailspage_description_container .description_div::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.detailspage_description_container .reseve_btn_container {
+  display: flex;
+}
+
+.detailspage_description_container .reseve_btn_container .reserve_btn {
+  width: 100%;
+  margin-top: 0;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .detailpage_logo {
+    height: 100vh;
+  }
+
+  .details_image_container {
+    display: block;
+    width: 40%;
+  }
+
+  .details_image_container .detail-block {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    opacity: 0.8;
+  }
+
+  .detailspage_description_container {
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 3%;
+  }
+
+  .detailspage_description_container .reseve_btn_container {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+
+  .detailspage_description_container .reseve_btn_container .reserve_btn {
+    margin-right: 0;
+    width: 160px;
+    border-radius: 20px;
+  }
+}

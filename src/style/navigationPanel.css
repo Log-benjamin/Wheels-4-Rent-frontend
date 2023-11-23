@@ -1,0 +1,57 @@
+
+.container-fluid {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container-fluid {
+    display: block;
+    width: 200px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .container-fluid ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .container-fluid ul li a {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .container-fluid ul li a:hover {
+    background-color: #81b622;
+    color: aliceblue;
+  }
+
+  .active {
+    background-color: #81b622;
+  }
+
+  .container-fluid .row .col-auto {
+    height: 300px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .normal-user {
+    padding: 0.75rem 4rem 0.75rem 0.5rem;
+    border-radius: 10px;
+    border: 0.3px;
+    color: rgb(142, 135, 135);
+    margin-bottom: 0.5rem;
+  }
+
+  .rmv_btn {
+    padding: 0.75rem 2rem 0.75rem 0.5rem;
+  }
+}

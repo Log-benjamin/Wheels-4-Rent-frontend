@@ -1,0 +1,34 @@
+.navbar_container {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar_container {
+    display: flex;
+    padding-left: 3%;
+    padding-right: 5%;
+  }
+
+  .navbar_container .container {
+    width: 120%;
+    margin-left: 3%;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .logout-btn {
+    margin-left: 2rem;
+  }
+
+  .company_name {
+    transform: rotate(-10deg);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .user_name {
+    color: white;
+    font-size: 1.3rem;
+  }
+}
