@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo
 
-[Wheels-4-Rent]()
+[Wheels-4-Rent](https://wheels-4-rentv1.onrender.com)
 
 <!-- BACKEND -->
 ## 🔗 Link for the Backend <a name="backend"></a>
@@ -78,8 +78,7 @@
 
 ## 🔗 Link for the API Documentations <a name="APIDoc"></a>
 
-- open the backend server in localhost:3000 first
-- [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
+- [Wheels-4-Rent API DOC](https://wheels-4-rent.onrender.com/api-docs/)
 
 <!-- KANBAN -->
 
@@ -87,6 +86,13 @@
 - [Kanban Board](https://github.com/Log-benjamin/Wheels-4-Rent-backend/projects/1)
 
 - [Initial Kanban Board](https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png)
+
+<img src="https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png" width="80%">
+
+### Team Members
+1 [Emmanuel kipngeno](https://github.com/kkmanuu)
+
+2 [Binyam Tegene](https://github.com/Log-benjamin)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
