@@ -21,7 +21,7 @@ const Register = () => {
     formData.append('email', emailRef.current.value);
     formData.append('password', passwordRef.current.value);
 
-    axios.post('http://localhost:3000/api/v1/registration', formData);
+    axios.post('https://wheels-4-rent.onrender.com/api/v1/registration', formData);
     setShow(true);
   };
   const handleClose = () => {

@@ -9,17 +9,17 @@ const initialState = {
 };
 
 export const fetchLatesCarModels = createAsyncThunk('car/latestmodels', async () => {
-  const response = await axios.get('http://localhost:3000/api/v1/cars');
+  const response = await axios.get('https://wheels-4-rent.onrender.com/api/v1/cars');
   return response.data;
 });
 
 export const addLatestCarModel = createAsyncThunk('post/car', async (params) => {
-  const response = await axios.post('http://localhost:3000/api/v1/cars', params);
+  const response = await axios.post('https://wheels-4-rent.onrender.com/api/v1/cars', params);
   return response.data;
 });
 
 export const deleteCar = createAsyncThunk('car/delete', async (id) => {
-  const response = await axios.delete(`http://localhost:3000/api/v1/cars/${id}`);
+  const response = await axios.delete(`https://wheels-4-rent.onrender.com/api/v1/cars/${id}`);
   return response.data;
 });
 
