@@ -1,54 +1,62 @@
-.table_container {
-  width: 95%;
-  margin-right: 5%;
-  margin-left: 5%;
-  height: 420px;
+.removepage_inner_container {
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.removepage_inner_first_div {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.removecar_form_container {
+  width: 96%;
+  margin-left: 2%;
+}
+
+.removepage_table_container {
+  width: 100%;
+  height: 470px;
   overflow-y: auto;
   border-radius: 10px;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
 
-.removecar_form_container {
-  margin-top: 0;
-}
-
-.table_container::-webkit-scrollbar {
+.removepage_table_container::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
 
-.table_container #customers th {
-  font-size: 1rem;
+.removepage_table_container #removepage_customers th {
   text-align: center;
   background-color: #81b622;
   color: white;
 }
 
-.table_container #customers td,
-.table_container #customers th {
+.removepage_table_container #removepage_customers td,
+.removepage_table_container #removepage_customers th {
   border: 1px solid #ddd;
-  padding: 8px;
-  font-size: 1rem;
-
-  /* padding-right: 20px; */
+  padding: 0.5rem;
+  font-size: 0.95rem;
 }
 
-.table_container #customers thead th {
+.removepage_table_container #removepage_customers thead th {
   position: sticky;
   top: 0;
 }
 
-.table_container #customers {
+.removepage_table_container #removepage_customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.table_container #customers tr:nth-child(even) { background-color: #acaaaaaa; }
+.removepage_table_container #removepage_customers tr:nth-child(even) { background-color: #acaaaaaa; }
 
-.table_container #customers tr:nth-child(odd) { background-color: #d5d0d0; }
+.removepage_table_container #removepage_customers tr:nth-child(odd) { background-color: #d5d0d0; }
 
-.table_container #customers tr:hover {
+.removepage_table_container #removepage_customers tr:hover {
   background-color: rgb(190, 112, 112);
   cursor: pointer;
 }
@@ -61,14 +69,26 @@
   color: red;
 }
 
-.table_container .removecar_form_container .delte_button {
+.removepage_table_container .removecar_form_container .removepage_delte_button {
   font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {
   .removecar_form_container {
-    margin-left: 10%;
+    width: 700px;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .removepage_inner_first_div {
+    width: 95%;
+    margin-top: 0.5rem;
     margin-right: 5%;
-    margin-top: 0;
+  }
+
+  .removepage_table_container #removepage_customers td,
+  .removepage_table_container #removepage_customers th {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
   }
 }

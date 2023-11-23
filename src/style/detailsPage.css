@@ -77,13 +77,13 @@
 
 .detailspage_description_container .reseve_btn_container {
   display: flex;
-  justify-content: right;
 }
 
 .detailspage_description_container .reseve_btn_container .reserve_btn {
+  width: 100%;
   margin-top: 0;
   padding: 0.5rem 2rem;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -107,5 +107,17 @@
     width: 50%;
     margin-left: 2%;
     margin-right: 3%;
+  }
+
+  .detailspage_description_container .reseve_btn_container {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+
+  .detailspage_description_container .reseve_btn_container .reserve_btn {
+    margin-right: 0;
+    width: 160px;
+    border-radius: 20px;
   }
 }

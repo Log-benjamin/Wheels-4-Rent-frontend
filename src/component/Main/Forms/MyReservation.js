@@ -11,6 +11,7 @@ import NavigationPanel from '../NavigationPanel';
 import lambergini from '../../../assets/9296454.gif';
 import '../../../style/myReservation.css';
 import { fetchReservations, deleteReservation } from '../../../redux/reserveSlice';
+import LoadSpinner from '../Spinner';
 
 const MyReservation = () => {
   const navigate = useNavigate();
@@ -19,12 +20,11 @@ const MyReservation = () => {
   const result = jwtDecode(token);
   const dispatch = useDispatch();
   const fetchRes = useSelector((state) => state.reservation.reservations);
+  const loading = useSelector((state) => state.reservation.loading);
   const filteredReservations = fetchRes.filter((reservation) => reservation.user_id === result.id);
-
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
-
   const handleClick = (e) => {
     const { id } = e.currentTarget;
     dispatch(deleteReservation(id));
@@ -34,7 +34,6 @@ const MyReservation = () => {
     setShow(false);
     navigate('/main');
   };
-
   return (
     <>
       <div className="myreservationpage_container">
@@ -50,60 +49,61 @@ const MyReservation = () => {
           <NavBar />
           <div className="myreservationpage_inner_first_div">
             <NavigationPanel />
-            <div>
-              <div className="myReservation_table_container">
-                <table id="customers">
-                  <thead>
-                    <tr className="first_row">
-                      <th>Date</th>
-                      <th>City</th>
-                      <th>Selected Car</th>
-                      <th>Total Price</th>
-                      <th>Changes</th>
-                    </tr>
-                  </thead>
-                  {filteredReservations?.map((reserve) => (
-                    <tr key={reserve.id}>
-                      <td>
-                        From :
-                        <strong>
-                          {reserve.start_date}
-                        </strong>
-                        <br />
-                        <br />
-                        To :
-                        <strong>
-                          {reserve.end_date}
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>{reserve.city}</strong>
-                      </td>
-                      <td className="carInfoCol">
-                        <strong>
-                          {reserve.car}
-                          {' - '}
-                          {reserve.model}
-                        </strong>
-                        <p>
-                          £
-                          {reserve.price}
-                        </p>
+            <div className="myReservation_table_container">
+              <table id="customers">
+                <thead>
+                  <tr className="first_row">
+                    <th>Date</th>
+                    <th>City</th>
+                    <th>Selected Car</th>
+                    <th>Total Price</th>
+                    <th>Changes</th>
+                  </tr>
+                </thead>
+                {filteredReservations?.map((reserve) => (
+                  <tr key={reserve.id}>
+                    <td className="myreservation_startenddate">
+                      <strong>
+                        {reserve.start_date}
+                      </strong>
+                      <br />
+                      To
+                      <br />
+                      <strong>
+                        {reserve.end_date}
+                      </strong>
+                    </td>
+                    <td className="myreservation_city">
+                      <strong>{reserve.city}</strong>
+                    </td>
+                    <td className="myreservation_carinfo">
+                      <strong>
+                        {reserve.car}
+                        {' - '}
+                        {reserve.model}
+                      </strong>
+                      <p>
+                        £
+                        {reserve.price}
+                      </p>
+                      {loading === true ? (
+                        <LoadSpinner />
+                      ) : (
                         <img src={reserve.image} className="myreservationCarImage" alt="reservedCarphoto" />
-                      </td>
-                      <td>
-                        <strong>
-                          £
-                          {reserve.total_price}
-                        </strong>
-                      </td>
-                      <td>
-                        <Button id={reserve.id} type="submit" onClick={((e) => handleClick(e))} variant="warning">Cancel</Button>
-                      </td>
-                    </tr>
-                  ))}
-                </table>
-              </div>
+                      )}
+                    </td>
+                    <td className="myreservation_totalprice">
+                      <strong>
+                        £
+                        {reserve.total_price}
+                      </strong>
+                    </td>
+                    <td className="myreservation_changes">
+                      <Button id={reserve.id} type="submit" onClick={((e) => handleClick(e))} variant="warning">Cancel</Button>
+                    </td>
+                  </tr>
+                ))}
+              </table>
             </div>
           </div>
         </div>
@@ -111,5 +111,4 @@ const MyReservation = () => {
     </>
   );
 };
-
 export default MyReservation;

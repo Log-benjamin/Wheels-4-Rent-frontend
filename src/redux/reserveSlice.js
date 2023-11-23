@@ -8,17 +8,17 @@ const initialState = {
 };
 
 export const fetchReservations = createAsyncThunk('fetch/reservations', async () => {
-  const response = await axios.get('http://localhost:3000/api/v1/reservation');
+  const response = await axios.get('https://wheels-4-rent.onrender.com/api/v1/reservation');
   return response.data;
 });
 
 export const createReservation = createAsyncThunk('post/reservations', async (newReservation) => {
-  const response = await axios.post('http://localhost:3000/api/v1/reservation', newReservation);
+  const response = await axios.post('https://wheels-4-rent.onrender.com/api/v1/reservation', newReservation);
   return response.data;
 });
 
 export const deleteReservation = createAsyncThunk('delete/reservation', async (id) => {
-  const response = await axios.delete(`http://localhost:3000/api/v1/reservation/${id}`);
+  const response = await axios.delete(`https://wheels-4-rent.onrender.com/api/v1/reservation/${id}`);
   return response.data.id;
 });
 

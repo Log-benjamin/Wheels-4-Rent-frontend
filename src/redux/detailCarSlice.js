@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const detailCarInfo = createAsyncThunk('car/detail', async (id) => {
-  const response = await axios.get(`http://localhost:3000/api/v1/cars/${id}`);
+  const response = await axios.get(`https://wheels-4-rent.onrender.com/api/v1/cars/${id}`);
   return response.data;
 });
 

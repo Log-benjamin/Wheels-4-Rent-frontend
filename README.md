@@ -16,6 +16,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#live-demo)
   - [🔗 Link for the Backend](#backend)
   - [🔗 API Documentations](#APIDoc)
   - [🔗 Kanban Board](#kanban)
@@ -47,7 +48,7 @@
 </details>
 
 
-<!-- Features -->
+<!-- FEATURES -->
 
 ### Key Features <a name="key-features"></a>
 
@@ -62,10 +63,14 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FRONTEND -->
+## 🚀 Live Demo
+
+[Wheels-4-Rent](https://wheels-4-rentv1.onrender.com)
+
+<!-- BACKEND -->
 ## 🔗 Link for the Backend <a name="backend"></a>
 
-- [Wheels-4-Rent Frontend](https://github.com/Log-benjamin/Wheels-4-Rent-backend)
+- [Wheels-4-Rent Backend](https://github.com/Log-benjamin/Wheels-4-Rent-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,16 +78,24 @@
 
 ## 🔗 Link for the API Documentations <a name="APIDoc"></a>
 
-- open the backend server in localhost:3000 first
-- [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
+- [Wheels-4-Rent API DOC](https://wheels-4-rent.onrender.com/api-docs/)
 
 <!-- KANBAN -->
 
 ## 🔗 Kanban Board <a name="kanban"></a>
 - [Kanban Board](https://github.com/Log-benjamin/Wheels-4-Rent-backend/projects/1)
+
 - [Initial Kanban Board](https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png)
 
+<img src="https://user-images.githubusercontent.com/97245616/281423098-fc50c624-f431-4dc6-8c29-a20a40f49d19.png" width="80%">
+
+### Team Members
+1 [Emmanuel kipngeno](https://github.com/kkmanuu)
+
+2 [Binyam Tegene](https://github.com/Log-benjamin)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 
@@ -119,7 +132,14 @@ To run the project, you will need to execute:
 ```bash
    npm start
 ```
+### If you want to add and remove a car you should log in as an admin user.
 
+```bash
+ADMIN Credentials
+
+username: admin
+password: 123456789
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -149,7 +169,7 @@ To run the project, you will need to execute:
   </ul>
 <br />
 
-👤 **Log-benjamin**
+👤 **Binyam Tegene**
 
  <ul>
     <li>
