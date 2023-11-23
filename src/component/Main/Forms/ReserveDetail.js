@@ -35,6 +35,7 @@ const ReserveDetail = (selectedcar) => {
       start_date: '',
       end_date: '',
       city: '',
+      days: 0,
       car_id: selectedCarID,
       user_id: userID,
     },
@@ -42,11 +43,28 @@ const ReserveDetail = (selectedcar) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const startenddate = e.target.value;
     setNewReservation((prevReservation) => ({
       ...prevReservation,
       reservation: {
         ...prevReservation.reservation,
         [name]: value,
+      },
+    }));
+    if (e.target.name === 'start_date') {
+      localStorage.setItem('startdate', startenddate);
+    } else {
+      localStorage.setItem('enddate', startenddate);
+    }
+    const one = new Date(localStorage.getItem('startdate'));
+    const two = new Date(localStorage.getItem('enddate'));
+    const timeDifference = two - one;
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    setNewReservation((prevReservation) => ({
+      ...prevReservation,
+      reservation: {
+        ...prevReservation.reservation,
+        days: daysDifference,
       },
     }));
   };
