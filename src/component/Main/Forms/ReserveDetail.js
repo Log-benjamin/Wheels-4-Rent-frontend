@@ -35,7 +35,7 @@ const ReserveDetail = (selectedcar) => {
       start_date: '',
       end_date: '',
       city: '',
-      days: '',
+      days: 0,
       car_id: selectedCarID,
       user_id: userID,
     },
